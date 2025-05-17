@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '30 15 * * *'  # 9:00 PM IST daily
+   - cron: '51 15 * * *'  # 9:21 PM IST daily
   workflow_dispatch:        # Manual trigger option
 
 jobs:
@@ -15,8 +15,8 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name 'your-github-username'
-          git config --global user.email 'your-email@example.com'
+          git config --global user.name 'adarsh-vishwakarma'
+          git config --global user.email 'adarshvishwakarma704@gmail.com'
 
       - name: Run update script
         run: |
