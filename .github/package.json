@@ -1,0 +1,9 @@
+{
+  "name": "daily-commit-bot",
+  "version": "1.0.0",
+  "main": "update.js",
+  "scripts": {
+    "start": "node update.js"
+  },
+  "license": "MIT"
+}

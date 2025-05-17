@@ -2,23 +2,24 @@ name: Daily Commit
 
 on:
   schedule:
-   - cron: '51 15 * * *'  # 9:21 PM IST daily
-  workflow_dispatch:        # Manual trigger option
+  - cron: '5 16 * * *'  # 9:35 PM IST (16:05 UTC)
+  workflow_dispatch:        # Allow manual run
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  commit:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: Set Up Git
         run: |
-          git config --global user.name 'adarsh-vishwakarma'
-          git config --global user.email 'adarshvishwakarma704@gmail.com'
+          git config --global user.name "adarsh-vishwakarma"
+          git config --global user.email "adarshvishwakarma704@gmail.com"
 
-      - name: Run update script
-        run: |
-          chmod +x update.sh
-          ./update.sh
+      - name: Run Node Script
+        run: node update.js
